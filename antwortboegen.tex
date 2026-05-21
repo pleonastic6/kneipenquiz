@@ -5,16 +5,12 @@
 \usepackage[ngerman]{babel}
 \usepackage[a4paper,margin=1.6cm]{geometry}
 \usepackage{xcolor}
-\usepackage{array}
 \usepackage{tabularx}
-\usepackage{tikz}
-\usepackage{enumitem}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \pagestyle{empty}
 
 \definecolor{accent}{RGB}{215,120,160}
-\definecolor{linegray}{RGB}{170,170,170}
 \definecolor{textgray}{RGB}{70,70,70}
 
 \setlength{\parindent}{0pt}
@@ -34,7 +30,7 @@
   \textbf{#1.} \hrulefill \par\vspace{0.45cm}
 }
 
-\newcommand{\categoryblock}[2]{%
+\newcommand{\textcategory}[2]{%
   {\Large\bfseries\textcolor{accent}{#1}}\par
   {\small\textcolor{textgray}{#2}}\par
   \vspace{0.35cm}
@@ -46,25 +42,64 @@
   \vspace{0.35cm}
 }
 
+\newcommand{\checkboxrow}[1]{%
+  \textbf{#1.}\hspace{0.6cm}
+  $\square$\ A\hspace{1.1cm}
+  $\square$\ B\hspace{1.1cm}
+  $\square$\ C\hspace{1.1cm}
+  $\square$\ D\par\vspace{0.45cm}
+}
+
+\newcommand{\checkboxrowthree}[1]{%
+  \textbf{#1.}\hspace{0.6cm}
+  $\square$\ A\hspace{1.1cm}
+  $\square$\ B\hspace{1.1cm}
+  $\square$\ C\par\vspace{0.45cm}
+}
+
+\newcommand{\mccategory}[2]{%
+  {\Large\bfseries\textcolor{accent}{#1}}\par
+  {\small\textcolor{textgray}{#2}}\par
+  \vspace{0.35cm}
+  \checkboxrow{1}
+  \checkboxrow{2}
+  \checkboxrow{3}
+  \checkboxrow{4}
+  \checkboxrow{5}
+  \vspace{0.35cm}
+}
+
+\newcommand{\mccategorythree}[2]{%
+  {\Large\bfseries\textcolor{accent}{#1}}\par
+  {\small\textcolor{textgray}{#2}}\par
+  \vspace{0.35cm}
+  \checkboxrowthree{1}
+  \checkboxrowthree{2}
+  \checkboxrowthree{3}
+  \checkboxrowthree{4}
+  \checkboxrowthree{5}
+  \vspace{0.35cm}
+}
+
 \begin{document}
 
 \sheettitle{1}{Brauereien, Wein, Trivia}
-\categoryblock{Brauereien}{Bildfragen}
-\categoryblock{Wein}{Multiple Choice / Fachwissen}
-\categoryblock{Trivia}{Freie Antworten}
+\textcategory{Brauereien}{Bildfragen}
+\mccategorythree{Wein}{Multiple Choice}
+\textcategory{Trivia}{Freie Antworten}
 
 \newpage
 
 \sheettitle{2}{Bilderrätsel, Ortskenntnisse, Gametrivia}
-\categoryblock{Bilderrätsel}{Logik- und Zählfragen}
-\categoryblock{Ortskenntnisse}{Amberg / Oberpfalz}
-\categoryblock{Gametrivia}{Bildfragen}
+\textcategory{Bilderrätsel}{Logik- und Zählfragen}
+\textcategory{Ortskenntnisse}{Freie Antworten / Multiple Choice gemischt}
+\textcategory{Gametrivia}{Bildfragen}
 
 \newpage
 
 \sheettitle{3}{Meme-Quiz, Geographie, Tierfragen}
-\categoryblock{Meme-Quiz}{Bildfragen}
-\categoryblock{Geographie}{Multiple Choice}
-\categoryblock{Tierfragen}{Multiple Choice}
+\textcategory{Meme-Quiz}{Bildfragen}
+\mccategory{Geographie}{Multiple Choice}
+\mccategory{Tierfragen}{Multiple Choice}
 
 \end{document}
