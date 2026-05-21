@@ -1,0 +1,70 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+
+\definecolor{accent}{RGB}{215,120,160}
+\definecolor{linegray}{RGB}{170,170,170}
+\definecolor{textgray}{RGB}{70,70,70}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+
+\newcommand{\sheettitle}[2]{%
+  {\Huge\bfseries Kneipenquiz \hfill Runde #1}\par
+  {\large\textcolor{textgray}{#2}}\par
+  \vspace{0.6cm}
+  \noindent\begin{tabularx}{\textwidth}{@{}lXlX@{}}
+    \textbf{Teamname:} & \hrulefill & \textbf{Punkte:} & \hrulefill
+  \end{tabularx}
+  \vspace{0.8cm}
+}
+
+\newcommand{\answerline}[1]{%
+  \textbf{#1.} \hrulefill \par\vspace{0.45cm}
+}
+
+\newcommand{\categoryblock}[2]{%
+  {\Large\bfseries\textcolor{accent}{#1}}\par
+  {\small\textcolor{textgray}{#2}}\par
+  \vspace{0.35cm}
+  \answerline{1}
+  \answerline{2}
+  \answerline{3}
+  \answerline{4}
+  \answerline{5}
+  \vspace{0.35cm}
+}
+
+\begin{document}
+
+\sheettitle{1}{Brauereien, Wein, Trivia}
+\categoryblock{Brauereien}{Bildfragen}
+\categoryblock{Wein}{Multiple Choice / Fachwissen}
+\categoryblock{Trivia}{Freie Antworten}
+
+\newpage
+
+\sheettitle{2}{Bilderrätsel, Ortskenntnisse, Gametrivia}
+\categoryblock{Bilderrätsel}{Logik- und Zählfragen}
+\categoryblock{Ortskenntnisse}{Amberg / Oberpfalz}
+\categoryblock{Gametrivia}{Bildfragen}
+
+\newpage
+
+\sheettitle{3}{Meme-Quiz, Geographie, Tierfragen}
+\categoryblock{Meme-Quiz}{Bildfragen}
+\categoryblock{Geographie}{Multiple Choice}
+\categoryblock{Tierfragen}{Multiple Choice}
+
+\end{document}

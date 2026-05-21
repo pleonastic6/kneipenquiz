@@ -5,6 +5,7 @@ Repo-lokale Beamer-Präsentation inklusive aller verwendeten Bild-Assets.
 ## Struktur
 
 - `quiz.tex` – komplette Präsentation
+- `antwortboegen.tex` – druckbare Antwortzettel, eine Seite pro Runde
 - `assets/brauereien/` – Bildfragen Runde 1
 - `assets/bilderraetsel/` – Bildfragen Runde 2
 - `assets/gametrivia/` – Bildfragen Runde 2
